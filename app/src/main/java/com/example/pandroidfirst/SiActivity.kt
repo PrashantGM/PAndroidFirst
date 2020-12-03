@@ -21,8 +21,8 @@ class SiActivity : AppCompatActivity() {
         tvOutput=findViewById(R.id.tvOutput)
         btnCal.setOnClickListener {
             val si:Float
-            si=calculatesi();
-            tvOutput.setText("Simple Interest is $si")
+            si=calculatesi()
+            tvOutput.text = "Simple Interest is $si"
 
         }
     }

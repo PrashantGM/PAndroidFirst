@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
 
         btnCal.setOnClickListener {
             if(validate())
-                retreive();
+                retreive()
 
         }
         btnNext.setOnClickListener {
@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun validate():Boolean{
-        var flag:Boolean=true
+        var flag=true
         if(TextUtils.isEmpty(etFirst.text)){
             etFirst.error="Enter first number"
             etFirst.requestFocus()
@@ -71,7 +71,7 @@ class MainActivity : AppCompatActivity() {
         val result:Int
         when{
             rbAdd.isChecked->{
-                result=add(first,second);
+                result=add(first,second)
                 tvOutput.text=result.toString()
             }
             rbSubtract.isChecked -> {
@@ -95,15 +95,15 @@ class MainActivity : AppCompatActivity() {
 
     }
     private fun add(first:Int,second:Int):Int{
-        return first+second;
+        return first+second
     }
     private fun subtract(first:Int,second:Int):Int{
-        return first-second;
+        return first-second
     }
     private fun multiply(first:Int,second:Int):Int{
-        return first*second;
+        return first*second
     }
     private fun divide(first:Int,second:Int):Int{
-        return first/second;
+        return first/second
     }
 }
