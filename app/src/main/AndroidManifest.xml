@@ -9,14 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PAndroidFirst">
-        <activity android:name=".SiActivity"></activity>
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <activity android:name=".TimepickerActivity"></activity>
+        <activity android:name=".DatepickerActivity" />
+        <activity android:name=".DMASActivity" />
+        <activity android:name=".SpinnerActivity">
         </activity>
-    </application>
+        <activity android:name=".AlertDialogActivity" />
+        <activity android:name=".UserProfileActivity" />
+        <activity android:name=".GridActivity" />
+        <activity android:name=".MessageActivity" />
+        <activity android:name=".SiActivity" />
+        <activity android:name=".MainActivity" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        </application>
 
 </manifest>

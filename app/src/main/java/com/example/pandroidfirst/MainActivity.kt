@@ -4,106 +4,68 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
-import android.widget.Button
-import android.widget.EditText
-import android.widget.RadioButton
-import android.widget.Toast
-import android.widget.TextView
+import android.widget.*
+import androidx.appcompat.app.AlertDialog
 import androidx.core.view.isVisible
 
 class MainActivity : AppCompatActivity() {
     //Global variable
-    private lateinit var tvOutput:TextView
-    private lateinit var etFirst:EditText
-    private lateinit var etSecond:EditText
-    private lateinit var btnCal:Button
-    private lateinit var rbAdd:RadioButton
-    private lateinit var rbSubtract:RadioButton
-    private lateinit var rbMultiply:RadioButton
-    private lateinit var rbDivide:RadioButton
-    private lateinit var btnNext:Button
+    private lateinit var rbDatePicker:RadioButton
+    private lateinit var rbTimePicker:RadioButton
+    private lateinit var rbAlertDialog:RadioButton
+    private lateinit var rbGrid:RadioButton
+    private lateinit var rbMessage:RadioButton
+    private lateinit var rbDMAS:RadioButton
+    private lateinit var rbSpinner:RadioButton
+    private lateinit var rbUserProfile:RadioButton
+    private lateinit var tvTitle:TextView
+    private lateinit var btnRun:Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        etFirst = findViewById(R.id.etFirst)
-        etSecond = findViewById(R.id.etSecond)
-        btnCal = findViewById(R.id.btnCal)
-        tvOutput = findViewById(R.id.tvOutput)
-        rbAdd = findViewById(R.id.rbAdd)
+        rbDatePicker=findViewById(R.id.rbDatePicker)
+        rbTimePicker=findViewById(R.id.rbTimePicker)
+        rbAlertDialog=findViewById(R.id.rbAlertDialog)
+        rbGrid=findViewById(R.id.rbGrid)
+        rbMessage=findViewById(R.id.rbMessage)
+        rbDMAS=findViewById(R.id.rbDMAS)
+        rbSpinner=findViewById(R.id.rbSpinner)
+        rbUserProfile=findViewById(R.id.rbUserProfile)
+        tvTitle=findViewById(R.id.tvTitle)
+        btnRun=findViewById(R.id.btnRun)
 
-        rbSubtract = findViewById(R.id.rbSubtract)
-        rbMultiply = findViewById(R.id.rbMultiply)
-        rbDivide = findViewById(R.id.rbDivide)
-        btnNext=findViewById(R.id.btnNext)
+        btnRun.setOnClickListener {
 
-        btnCal.setOnClickListener {
-            if(validate())
-                retreive()
-
-        }
-        btnNext.setOnClickListener {
-
-            startActivity(Intent(this@MainActivity, SiActivity::class.java))
+            if(rbDatePicker.isChecked)
+            {
+                startActivity(Intent(this@MainActivity, DatepickerActivity::class.java))
+            }
+            else if(rbAlertDialog.isChecked){
+                startActivity(Intent(this@MainActivity, AlertDialogActivity::class.java))
+            }
+            else if(rbGrid.isChecked){
+                startActivity(Intent(this@MainActivity, GridActivity::class.java))
+            } else if(rbMessage.isChecked){
+                startActivity(Intent(this@MainActivity, MessageActivity::class.java))
+            } else if(rbDMAS.isChecked){
+                startActivity(Intent(this@MainActivity, DMASActivity::class.java))
+            } else if(rbSpinner.isChecked){
+                startActivity(Intent(this@MainActivity, SpinnerActivity::class.java))
+            }
+             else if(rbUserProfile.isChecked){
+                startActivity(Intent(this@MainActivity, UserProfileActivity::class.java))
+            }
+            else if(rbTimePicker.isChecked){
+                startActivity(Intent(this@MainActivity, TimepickerActivity::class.java))
+            }
+            else {
+                startActivity(Intent(this@MainActivity, SiActivity::class.java))
+            }
             finish()
 
         }
-    }
-    private fun validate():Boolean{
-        var flag=true
-        if(TextUtils.isEmpty(etFirst.text)){
-            etFirst.error="Enter first number"
-            etFirst.requestFocus()
-            flag=false
-                }
-        else if(TextUtils.isEmpty(etSecond.text)){
-            etSecond.error="Enter second number"
-            etSecond.requestFocus()
-            flag=false
-
-        }
-        return flag
-    }
-    private fun retreive(){
-        val first:Int=etFirst.text.toString().toInt()
-        val second:Int=etSecond.text.toString().toInt()
-        val result:Int
-        when{
-            rbAdd.isChecked->{
-                result=add(first,second)
-                tvOutput.text=result.toString()
-            }
-            rbSubtract.isChecked -> {
-                result=subtract(first,second)
-                tvOutput.text=result.toString()
-        }
-            rbMultiply.isChecked -> {
-                result = multiply(first, second)
-                tvOutput.text=result.toString()
-
-            }
-            rbDivide.isChecked-> {
-                result = divide(first, second)
-                tvOutput.text=result.toString()
-            }
-        }
-//        btnNext.isVisible=true
-
-        //            if(rdoAdd.isChecked)
-        //Toast.makeText(this, "result is $result", Toast.LENGTH_LONG).show()
-
-    }
-    private fun add(first:Int,second:Int):Int{
-        return first+second
-    }
-    private fun subtract(first:Int,second:Int):Int{
-        return first-second
-    }
-    private fun multiply(first:Int,second:Int):Int{
-        return first*second
-    }
-    private fun divide(first:Int,second:Int):Int{
-        return first/second
     }
 }

@@ -4,39 +4,58 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:gravity="center"
-    tools:context=".SiActivity">
+    android:orientation="vertical"
+    tools:context=".DMASActivity">
     <EditText
-        android:id="@+id/etPrincipal"
+        android:id="@+id/etFirst"
         android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Principal"
+        android:hint="Enter first number"
         android:inputType="number"/>
     <EditText
-        android:id="@+id/etTime"
+        android:id="@+id/etSecond"
         android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter time in yrs"
+        android:hint="Enter second number"
         android:inputType="number"/>
-    <EditText
-        android:id="@+id/etRate"
-        android:layout_margin="10dp"
+    <RadioGroup
+        android:layout_margin="10sp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter rate of interest"
-        android:inputType="number"/>
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rbAdd"
+            android:text="Add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/rbSubtract"
+            android:text="Subtract"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/rbMultiply"
+            android:text="Multiply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/rbDivide"
+            android:text="Divide"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
+    </RadioGroup>
     <Button
         android:id="@+id/btnCal"
+        android:layout_margin="10sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Calculate SI"/>
+        android:text="Calculate"/>
     <TextView
         android:id="@+id/tvOutput"
-        android:text="Something should be here"
+        android:text="0"
         android:textSize="20sp"
         android:gravity="center"
         android:layout_margin="10dp"
@@ -46,15 +65,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1">
-
     </Space>
     <Button
         android:id="@+id/btnBack"
         android:layout_gravity="end"
-        android:layout_margin="10dp"
+        android:layout_margin="10sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Back"/>
+    <!--        android:visibility="invisible"-->
+
 
 
 </LinearLayout>

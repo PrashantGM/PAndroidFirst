@@ -7,66 +7,73 @@
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".MainActivity">
-    <EditText
-        android:id="@+id/etFirst"
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter first number"
-        android:inputType="number"/>
-    <EditText
-        android:id="@+id/etSecond"
-        android:layout_margin="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Enter second number"
-        android:inputType="number"/>
-    <RadioGroup
-        android:layout_margin="10sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <RadioButton
-            android:id="@+id/rbAdd"
-            android:text="Add"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <RadioButton
-            android:id="@+id/rbSubtract"
-            android:text="Subtract"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <RadioButton
-            android:id="@+id/rbMultiply"
-            android:text="Multiply"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-        <RadioButton
-            android:id="@+id/rbDivide"
-            android:text="Divide"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-    </RadioGroup>
-    <Button
-        android:id="@+id/btnCal"
-        android:layout_margin="10sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Calculate"/>
     <TextView
-        android:id="@+id/tvOutput"
-        android:text="0"
+        android:id="@+id/tvTitle"
+        android:text="HOME"
         android:textSize="20sp"
         android:gravity="center"
         android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
-    <Button
-        android:id="@+id/btnNext"
+
+    <RadioGroup
         android:layout_margin="10sp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RadioButton
+            android:id="@+id/rbDMAS"
+            android:text="DMAS Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/rbGrid"
+            android:text="Grid Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/rbMessage"
+            android:text="Message Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/rbSimple"
+            android:text="SimpleInterest Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/rbSpinner"
+            android:text="Spinner Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/rbUserProfile"
+            android:text="UserProfile Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/rbDatePicker"
+            android:text="DatePicker Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/rbAlertDialog"
+            android:text="AlertDialog Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/rbTimePicker"
+            android:text="TimePicker Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    </RadioGroup>
+    <Button
+        android:id="@+id/btnRun"
+        android:layout_margin="10sp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Next"/>
+        android:text="Run"/>
+
 <!--        android:visibility="invisible"-->
 
 
