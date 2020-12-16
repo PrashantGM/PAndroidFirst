@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var rbUserProfile:RadioButton
     private lateinit var tvTitle:TextView
     private lateinit var btnRun:Button
+    private lateinit var rbListview: RadioButton
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +37,7 @@ class MainActivity : AppCompatActivity() {
         rbUserProfile=findViewById(R.id.rbUserProfile)
         tvTitle=findViewById(R.id.tvTitle)
         btnRun=findViewById(R.id.btnRun)
-
+        rbListview=findViewById(R.id.rbListview)
         btnRun.setOnClickListener {
 
             if(rbDatePicker.isChecked)
@@ -61,6 +62,10 @@ class MainActivity : AppCompatActivity() {
             else if(rbTimePicker.isChecked){
                 startActivity(Intent(this@MainActivity, TimepickerActivity::class.java))
             }
+            else if(rbListview.isChecked){
+                startActivity(Intent(this@MainActivity, ListviewActivity::class.java))
+            }
+
             else {
                 startActivity(Intent(this@MainActivity, SiActivity::class.java))
             }

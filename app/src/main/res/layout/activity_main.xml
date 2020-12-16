@@ -65,6 +65,11 @@
             android:text="TimePicker Activity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/rbListview"
+            android:text="ListView Activity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
     </RadioGroup>
     <Button
